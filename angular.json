@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "initial-project": {
+    "componentizacao": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,22 +17,29 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/initial-project",
+            "outputPath": "dist/componentizacao",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/icofont.min.css",
+              "src/assets/css/owl.carousel.min.css",
+              "src/assets/css/jquery-ui.min.css",
+              "src/assets/css/owl.carousel.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-3.2.1.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/owl.carousel.min.js",
+              "src/assets/js/jquery-ui.min.js",
+              "src/assets/js/edit.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "initial-project:build:production"
+              "browserTarget": "componentizacao:build:production"
             },
             "development": {
-              "browserTarget": "initial-project:build:development"
+              "browserTarget": "componentizacao:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,25 +83,17 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "initial-project:build"
+            "browserTarget": "componentizacao:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
