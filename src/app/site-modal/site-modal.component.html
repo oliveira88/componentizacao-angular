@@ -1,0 +1,221 @@
+<!-- DELETE MODAL  -->
+<div
+  class="modal fade"
+  id="delete-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="close-modal" data-dismiss="modal">
+          <i class="icofont-close-line"></i>
+        </div>
+      </div>
+      <div class="modal-body">
+        <h4>
+          Are you sure you would like to remove this item from the shopping
+          cart?
+        </h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal" data-dismiss="modal">
+          cancel
+        </button>
+        <button type="button" class="btn-modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART PRODUCT MODAL  -->
+<div
+  class="modal fade"
+  id="cart-product-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Confirmable Information</h2>
+      </div>
+      <div class="modal-body">
+        <h3>You have added <a href="#"> Philips Sonicare </a> to cart</h3>
+        <div class="img-box">
+          <img src="assets/images/ring-3.jpg" alt="product" class="img-fluid" />
+        </div>
+        <h5>There are <span> 10 </span> Items in your cart</h5>
+        <p>Cart Subtotal: <span> $1.00 </span></p>
+        <a href="#" class="view-cart"> View Cart </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn continue-btn" data-dismiss="modal">
+          <span> Continue Shopping </span> ( <span id="count-num"> 10 </span> )
+        </button>
+        <button type="button" class="btn checkout-btn">Go to Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAILS  MODAL  -->
+<div
+  class="modal fade"
+  id="product-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-5">
+              <div class="proSlider">
+                <div id="owl-hash-URL2" class="owl-carousel owl-hash-slider">
+                  <div class="item" data-hash="1">
+                    <img src="assets/images/ring-1.jpg" class="img-fluid" />
+                  </div>
+                  <div class="item" data-hash="2">
+                    <img src="assets/images/ring-2.jpg" class="img-fluid" />
+                  </div>
+                  <div class="item" data-hash="3">
+                    <img src="assets/images/ring-3.jpg" class="img-fluid" />
+                  </div>
+                  <div class="item" data-hash="4">
+                    <img src="assets/images/ring-4.jpg" class="img-fluid" />
+                  </div>
+                </div>
+
+                <div class="owl-hash-nav">
+                  <div class="item">
+                    <a href="#1">
+                      <img src="assets/images/ring-1.jpg" class="img-fluid" />
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#2">
+                      <img src="assets/images/ring-2.jpg" class="img-fluid" />
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#3">
+                      <img src="assets/images/ring-3.jpg" class="img-fluid" />
+                    </a>
+                  </div>
+                  <div class="item">
+                    <a href="#4">
+                      <img src="assets/images/ring-4.jpg" class="img-fluid" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-7">
+              <div class="product-details">
+                <h3>Baguette Diamond Rhodium Over Brass</h3>
+                <p><label> Price : </label> <span> $136.00 </span></p>
+                <p>
+                  <label title="availabilty"> In stock : </label>
+                  <span> 10 </span>
+                </p>
+                <p>
+                  <label> SKU :</label>
+                  <span> Baguette Diamond Rhodium Over Brass </span>
+                </p>
+                <h4>Features</h4>
+                <ul>
+                  <li>
+                    1.6 GHz dual-core Intel Core i5 (Turbo Boost up to 2.7 GHz)
+                    with 3 MB shared L3 cachet
+                  </li>
+                  <li>
+                    8 GB of 1600 MHz LPDDR3 RAM; 256 GB PCIe-based flash storage
+                  </li>
+                  <li>
+                    13.3-Inch (diagonal) LED-backlit Glossy Widescreen Display,
+                    1440 x 900 resolution
+                  </li>
+                  <li>Intel HD Graphics 6000</li>
+                  <li>OS X El Capitan, Up to 12 Hours of Battery Life</li>
+                  <li>1 Year Warranty</li>
+                </ul>
+
+                <div class="actions">
+                  <div class="counter shrink">
+                    <button class="btn plus">
+                      <i class="icofont-plus"></i>
+                    </button>
+                    <button class="btn minus">
+                      <i class="icofont-minus"></i>
+                    </button>
+                    <span class="num">0</span>
+                    <input
+                      class="product_num"
+                      name="product_num"
+                      value="0"
+                      type="hidden"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="ship-box">
+                <img src="assets/images/bg-1.jpg" alt="bg" class="img-fluid" />
+                <div class="secription">
+                  <div class="box">
+                    <div class="icon">
+                      <i class="icofont-vehicle-delivery-van"></i>
+                    </div>
+                    <div class="data">
+                      <h3>Free Shipping</h3>
+                      <h6>On all orders $199.00</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="ship-box">
+                <img src="assets/images/bg-2.jpg" alt="bg" class="img-fluid" />
+                <div class="secription">
+                  <div class="box">
+                    <div class="icon">
+                      <i class="icofont-money-bag"></i>
+                    </div>
+                    <div class="data">
+                      <h3>90 Day</h3>
+                      <h6>Money Come Black</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="ship-box">
+                <img src="assets/images/bg-3.jpg" alt="bg" class="img-fluid" />
+                <div class="secription">
+                  <div class="box">
+                    <div class="icon"><i class="icofont-safety"></i></div>
+                    <div class="data">
+                      <h3>Safe Shopping</h3>
+                      <h6>Guarantee 100%</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

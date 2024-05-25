@@ -1,0 +1,32 @@
+<div class="product-card">
+  <div class="img-box">
+    <img [src]="product.image" alt="product" class="img-fluid" />
+  </div>
+  <div class="data">
+    <a href="product.html" class="title">
+      {{ product.title }}
+    </a>
+    <ul>
+      <li *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+        <i class="icofont-star" [ngClass]="{ active: i < product.rating }"></i>
+      </li>
+    </ul>
+    <div class="price">
+      <span class="old"> {{ product.oldPrice }} </span>
+      <span class="new"> {{ product.newPrice }} </span>
+    </div>
+    <a href="#" class="add-to-cart" data-target="#cart-product-modal">
+      <i class="icofont-opencart"></i> Add To Cart
+    </a>
+    <span class="discount" *ngIf="product.hasDiscount">
+      {{ product.discount }}
+    </span>
+    <div [ngClass]="{ liked: isLiked, overlay: true }">
+      <div class="actions">
+        <a [ngClass]="{ liked: isLiked }" (click)="toggleLike()" href="#">
+          <i class="icofont-heart"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
