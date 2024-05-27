@@ -357,7 +357,7 @@ $(document).ready(function ($) {
         rtl: true,
         margin: 20,
         autoplay: false,
-        loop: true,
+        loop: false,
         nav: true,
         dots:false,
         autoplaySpeed: 2000,
