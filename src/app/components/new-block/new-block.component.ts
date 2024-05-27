@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Block } from 'src/model/block';
 
 @Component({
   selector: 'app-new-block',
@@ -7,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class NewBlockComponent {
 
-  @Input() imgURL!: string;
+  @Input() block!: Block;
 }

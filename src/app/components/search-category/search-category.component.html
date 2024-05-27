@@ -1,7 +1,7 @@
 <li>
   <p>
     <span
-      *ngIf="hasSubcateries()"
+      *ngIf="hasSubcategories()"
       class="plus">
     </span>
     <input
@@ -11,7 +11,7 @@
       onclick="myCatSelect(this)"
     />{{category.name}}
   </p>
-  <ul *ngIf="hasSubcateries()">
+  <ul *ngIf="hasSubcategories()">
       <app-search-category
           *ngFor="let subcategory of category.members"
           [category]="subcategory">

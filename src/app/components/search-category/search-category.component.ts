@@ -10,7 +10,7 @@ export class SearchCategoryComponent {
 
   @Input() category!: Category;
 
-  hasSubcateries(): boolean {
+  hasSubcategories(): boolean {
     
     return (
       this.category.members != undefined &&
