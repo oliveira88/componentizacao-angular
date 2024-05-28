@@ -80,134 +80,34 @@
             <div class="col-12 col-sm-12 col-md-5">
               <div class="proSlider">
                 <div id="owl-hash-URL2" class="owl-carousel owl-hash-slider">
-                  <div class="item" data-hash="1">
-                    <img src="assets/images/ring-1.jpg" class="img-fluid" />
-                  </div>
-                  <div class="item" data-hash="2">
-                    <img src="assets/images/ring-2.jpg" class="img-fluid" />
-                  </div>
-                  <div class="item" data-hash="3">
-                    <img src="assets/images/ring-3.jpg" class="img-fluid" />
-                  </div>
-                  <div class="item" data-hash="4">
-                    <img src="assets/images/ring-4.jpg" class="img-fluid" />
-                  </div>
-                </div>
-
-                <div class="owl-hash-nav">
-                  <div class="item">
-                    <a href="#1">
-                      <img src="assets/images/ring-1.jpg" class="img-fluid" />
-                    </a>
-                  </div>
-                  <div class="item">
-                    <a href="#2">
-                      <img src="assets/images/ring-2.jpg" class="img-fluid" />
-                    </a>
-                  </div>
-                  <div class="item">
-                    <a href="#3">
-                      <img src="assets/images/ring-3.jpg" class="img-fluid" />
-                    </a>
-                  </div>
-                  <div class="item">
-                    <a href="#4">
-                      <img src="assets/images/ring-4.jpg" class="img-fluid" />
-                    </a>
+                  <div
+                    class="item"
+                    *ngFor="let item of carouselItems; let i = index"
+                    [attr.data-hash]="i"
+                  >
+                    <img [src]="item.imageUrl" class="img-fluid" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-12 col-md-7">
               <div class="product-details">
-                <h3>Baguette Diamond Rhodium Over Brass</h3>
-                <p><label> Price : </label> <span> $136.00 </span></p>
-                <p>
-                  <label title="availabilty"> In stock : </label>
-                  <span> 10 </span>
-                </p>
-                <p>
-                  <label> SKU :</label>
-                  <span> Baguette Diamond Rhodium Over Brass </span>
-                </p>
-                <h4>Features</h4>
-                <ul>
-                  <li>
-                    1.6 GHz dual-core Intel Core i5 (Turbo Boost up to 2.7 GHz)
-                    with 3 MB shared L3 cachet
-                  </li>
-                  <li>
-                    8 GB of 1600 MHz LPDDR3 RAM; 256 GB PCIe-based flash storage
-                  </li>
-                  <li>
-                    13.3-Inch (diagonal) LED-backlit Glossy Widescreen Display,
-                    1440 x 900 resolution
-                  </li>
-                  <li>Intel HD Graphics 6000</li>
-                  <li>OS X El Capitan, Up to 12 Hours of Battery Life</li>
-                  <li>1 Year Warranty</li>
-                </ul>
-
-                <div class="actions">
-                  <div class="counter shrink">
-                    <button class="btn plus">
-                      <i class="icofont-plus"></i>
-                    </button>
-                    <button class="btn minus">
-                      <i class="icofont-minus"></i>
-                    </button>
-                    <span class="num">0</span>
-                    <input
-                      class="product_num"
-                      name="product_num"
-                      value="0"
-                      type="hidden"
-                    />
-                  </div>
-                </div>
+                <!-- Detalhes do produto -->
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let box of shipBoxes">
               <div class="ship-box">
-                <img src="assets/images/bg-1.jpg" alt="bg" class="img-fluid" />
+                <img
+                  src="assets/images/bg-{{ box.icon }}"
+                  alt="bg"
+                  class="img-fluid"
+                />
                 <div class="secription">
                   <div class="box">
-                    <div class="icon">
-                      <i class="icofont-vehicle-delivery-van"></i>
-                    </div>
+                    <div class="icon"><i class="{{ box.icon }}"></i></div>
                     <div class="data">
-                      <h3>Free Shipping</h3>
-                      <h6>On all orders $199.00</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="ship-box">
-                <img src="assets/images/bg-2.jpg" alt="bg" class="img-fluid" />
-                <div class="secription">
-                  <div class="box">
-                    <div class="icon">
-                      <i class="icofont-money-bag"></i>
-                    </div>
-                    <div class="data">
-                      <h3>90 Day</h3>
-                      <h6>Money Come Black</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="ship-box">
-                <img src="assets/images/bg-3.jpg" alt="bg" class="img-fluid" />
-                <div class="secription">
-                  <div class="box">
-                    <div class="icon"><i class="icofont-safety"></i></div>
-                    <div class="data">
-                      <h3>Safe Shopping</h3>
-                      <h6>Guarantee 100%</h6>
+                      <h3>{{ box.title }}</h3>
+                      <h6>{{ box.description }}</h6>
                     </div>
                   </div>
                 </div>

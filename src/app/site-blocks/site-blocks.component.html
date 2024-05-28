@@ -1,59 +1,13 @@
 <div class="new-blocks">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let image of images"
+      >
         <div class="new-block img-hover">
           <a href="#">
-            <img src="assets/images/ad-1.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-2.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-3.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-4.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-5.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-6.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-7.jpg" alt="ad" class="img-fluid" />
-          </a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="new-block img-hover">
-          <a href="#">
-            <img src="assets/images/ad-8.jpg" alt="ad" class="img-fluid" />
+            <img [src]="image" alt="ad" class="img-fluid" />
           </a>
         </div>
       </div>

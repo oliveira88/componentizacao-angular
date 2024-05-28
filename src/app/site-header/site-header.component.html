@@ -31,471 +31,48 @@
                 <div class="colapse">Collapse All</div>
               </div>
               <ul>
-                <li>
+                <li *ngFor="let category of categories">
                   <p>
                     <span class="plus"></span>
                     <input
-                      id="1"
-                      value="Jewelry"
+                      [id]="category.id"
+                      [value]="category.value"
                       type="checkbox"
-                      onclick="myCatSelect(this)"
-                    />Jewelry
+                      (click)="myCatSelect($event)"
+                    />
+                    {{ category.value }}
                   </p>
-                  <ul>
-                    <li>
+                  <ul *ngIf="category.subcategories">
+                    <li *ngFor="let subcategory of category.subcategories">
                       <p>
                         <span class="plus"></span>
                         <input
-                          id="2"
-                          value="Necklaces"
+                          [id]="subcategory.id"
+                          [value]="subcategory.value"
                           type="checkbox"
-                          onclick="myCatSelect(this)"
+                          (click)="myCatSelect($event)"
                         />
-                        Necklaces
+                        {{ subcategory.value }}
                       </p>
-                      <ul>
-                        <li>
+                      <ul *ngIf="subcategory.subcategories">
+                        <li
+                          *ngFor="
+                            let subSubcategory of subcategory.subcategories
+                          "
+                        >
                           <p>
                             <input
+                              [id]="subSubcategory.id"
+                              [value]="subSubcategory.value"
                               type="checkbox"
-                              id="3"
-                              value="Necklaces"
-                              onclick="myCatSelect(this)"
+                              (click)="myCatSelect($event)"
                             />
-                            Beaded Necklaces
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="4"
-                              value="Pendants"
-                              onclick="myCatSelect(this)"
-                            />
-                            Pendants
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="5"
-                              value="Necklaces"
-                              onclick="myCatSelect(this)"
-                            />
-                            Necklaces
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="6"
-                              value="Charm Necklaces"
-                              onclick="myCatSelect(this)"
-                            />
-                            Charm Necklaces
-                          </p>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>
-                        <span class="plus"></span
-                        ><input
-                          type="checkbox"
-                          id="6"
-                          value="Earrings"
-                          onclick="myCatSelect(this)"
-                        />
-                        Earrings
-                      </p>
-                      <ul>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="7"
-                              value="Hoop Earrings"
-                              onclick="myCatSelect(this)"
-                            />
-                            Hoop Earrings
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="8"
-                              value="Stud Earrings"
-                              onclick="myCatSelect(this)"
-                            />
-                            Stud Earrings
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="9"
-                              value="Chandelier Earrings"
-                              onclick="myCatSelect(this)"
-                            />
-                            Chandelier Earrings
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="10"
-                              value="Cluster Earrings"
-                              onclick="myCatSelect(this)"
-                            />
-                            Cluster Earrings
-                          </p>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="11"
-                          value="Brooches"
-                          onclick="myCatSelect(this)"
-                        />
-                        Brooches
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="12"
-                          value="Bracelets"
-                          onclick="myCatSelect(this)"
-                        />
-                        Bracelets
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="13"
-                          value="Rings"
-                          onclick="myCatSelect(this)"
-                        />
-                        Rings
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <p>
-                    <span class="plus"></span>
-                    <input
-                      type="checkbox"
-                      id="11"
-                      value="Brooches"
-                      onclick="myCatSelect(this)"
-                    />
-                    Sports
-                  </p>
-                  <ul>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="12"
-                          value="Football"
-                          onclick="myCatSelect(this)"
-                        />
-                        Football
-                      </p>
-                      <ul>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="13"
-                              value="Nike"
-                              onclick="myCatSelect(this)"
-                            />
-                            Nike
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="14"
-                              value="Puma"
-                              onclick="myCatSelect(this)"
-                            />
-                            Puma
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="15"
-                              value="Adidas"
-                              onclick="myCatSelect(this)"
-                            />
-                            Adidas
-                          </p>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p><input type="checkbox" /> Football</p>
-                      <ul>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="16"
-                              value="Nike"
-                              onclick="myCatSelect(this)"
-                            />
-                            Nike
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="17"
-                              value="Puma"
-                              onclick="myCatSelect(this)"
-                            />
-                            Puma
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="18"
-                              value="Adidas"
-                              onclick="myCatSelect(this)"
-                            />
-                            Adidas
-                          </p>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="19"
-                          value="Adidas"
-                          onclick="myCatSelect(this)"
-                        />
-                        Football
-                      </p>
-                      <ul>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="20"
-                              value="Nike"
-                              onclick="myCatSelect(this)"
-                            />
-                            Nike
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="21"
-                              value="Puma"
-                              onclick="myCatSelect(this)"
-                            />
-                            Puma
-                          </p>
-                        </li>
-                        <li>
-                          <p>
-                            <input
-                              type="checkbox"
-                              id="22"
-                              value="Adidas"
-                              onclick="myCatSelect(this)"
-                            />
-                            Adidas
+                            {{ subSubcategory.value }}
                           </p>
                         </li>
                       </ul>
                     </li>
                   </ul>
-                </li>
-                <li>
-                  <p>
-                    <span class="plus"></span>
-                    <input
-                      type="checkbox"
-                      id="23"
-                      value="Computers"
-                      onclick="myCatSelect(this)"
-                    />
-                    Computers
-                  </p>
-                  <ul>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="24"
-                          value="Accessories"
-                          onclick="myCatSelect(this)"
-                        />
-                        Accessories
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="25"
-                          value="Storage"
-                          onclick="myCatSelect(this)"
-                        />
-                        Storage
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="26"
-                          value="Printers"
-                          onclick="myCatSelect(this)"
-                        />
-                        Printers
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="27"
-                          value="Components"
-                          onclick="myCatSelect(this)"
-                        />
-                        Network Components
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <p>
-                    <span class="plus"></span>
-                    <input
-                      type="checkbox"
-                      id="28"
-                      value=" Headphones & Headsets"
-                      onclick="myCatSelect(this)"
-                    />
-                    Headphones & Headsets
-                  </p>
-                  <ul>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="29"
-                          value="Accessories"
-                          onclick="myCatSelect(this)"
-                        />
-                        Accessories
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="30"
-                          value="Storage"
-                          onclick="myCatSelect(this)"
-                        />
-                        Storage
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="31"
-                          value="Printers"
-                          onclick="myCatSelect(this)"
-                        />
-                        Printers
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <input
-                          type="checkbox"
-                          id="32"
-                          value="Components"
-                          onclick="myCatSelect(this)"
-                        />
-                        Network Components
-                      </p>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <p>
-                    <input
-                      type="checkbox"
-                      id="33"
-                      value="Food"
-                      onclick="myCatSelect(this)"
-                    />
-                    Food
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <input
-                      type="checkbox"
-                      id="34"
-                      value="Books"
-                      onclick="myCatSelect(this)"
-                    />
-                    Books
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <input
-                      type="checkbox"
-                      id="35"
-                      value="Fashion"
-                      onclick="myCatSelect(this)"
-                    />
-                    Fashion
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <input
-                      type="checkbox"
-                      id="36"
-                      value="Infant Toys "
-                      onclick="myCatSelect(this)"
-                    />
-                    Infant Toys
-                  </p>
                 </li>
               </ul>
             </div>
@@ -536,12 +113,15 @@
       <div class="site-menu">
         <div class="main-list">
           <ul class="main-ul fixed-height">
-            <li class="main-list-li list-cat">
+            <li
+              class="main-list-li list-cat"
+              *ngFor="let menuItem of menuItems"
+            >
               <a class="main-a" href="#">
                 <span class="cat-icon">
-                  <i class="icofont-smart-phone"></i>
+                  <i [class]="menuItem.icon"></i>
                 </span>
-                <span> Smart Phones </span>
+                <span> {{ menuItem.name }} </span>
                 <span class="right-icon">
                   <i class="icofont-thin-right"></i>
                 </span>
@@ -549,118 +129,12 @@
               <div class="cat-popup-list">
                 <div class="menue-block">
                   <ul>
-                    <li>
-                      <a href="#" class="item-branch"> Iphone </a>
-                      <ul class="itemsubmenu">
-                        <li><a href="#">Iphone 5</a></li>
-                        <li><a href="#">Iphone 5s</a></li>
-                        <li><a href="#">Iphone 6</a></li>
-                        <li><a href="#">Iphone 6s</a></li>
-                      </ul>
+                    <li *ngFor="let submenuItem of menuItem.submenu">
+                      <a href="#" class="item-branch">
+                        {{ submenuItem.name }}
+                      </a>
                     </li>
-                    <li>
-                      <a href="#" class="item-branch"> SamSung </a>
-                      <ul class="itemsubmenu">
-                        <li><a href="#"> Galaxy S6 </a></li>
-                        <li><a href="#"> Galaxy S7 </a></li>
-                        <li><a href="#"> Galaxy S6 </a></li>
-                        <li><a href="#"> Galaxy S6</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#" class="item-branch"> SONY </a></li>
-                    <li><a href="#" class="item-branch"> HUWAEI </a></li>
-                    <li>
-                      <a href="#" class="item-branch"> OPPO </a>
-                      <ul class="itemsubmenu">
-                        <li><a href="#">Oppo f1s</a></li>
-                        <li><a href="#">Oppo neo 7</a></li>
-                        <li><a href="#">Oppo neo 9</a></li>
-                        <li><a href="#">Oppo neo 3</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#" class="item-branch"> Xiaomi </a></li>
                   </ul>
-                </div>
-              </div>
-            </li>
-            <li class="main-list-li">
-              <a class="main-a" href="#">
-                <span class="cat-icon">
-                  <i class="icofont-wheelchair"></i>
-                </span>
-                <span> Furniture </span>
-                <span class="right-icon">
-                  <i class="icofont-thin-right"></i>
-                </span>
-              </a>
-              <div class="menue-content">
-                <div class="row">
-                  <div class="col-3">
-                    <a href="#" class="prod-box">
-                      <img
-                        src="assets/images/fur-1.jpg"
-                        alt="ads"
-                        class="img-fluid"
-                      />
-                      <h4>Driven Backpack K</h4>
-                      <p>200,00 $</p>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="prod-box">
-                      <img
-                        src="assets/images/fur-2.jpg"
-                        alt="ads"
-                        class="img-fluid"
-                      />
-                      <h4>Driven Backpack K</h4>
-                      <p>200,00 $</p>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="prod-box">
-                      <img
-                        src="assets/images/fur-3.jpg"
-                        alt="ads"
-                        class="img-fluid"
-                      />
-                      <h4>Driven Backpack K</h4>
-                      <p>200,00 $</p>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="prod-box">
-                      <img
-                        src="assets/images/fur-3.jpg"
-                        alt="ads"
-                        class="img-fluid"
-                      />
-                      <h4>Driven Backpack K</h4>
-                      <p>200,00 $</p>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="prod-box">
-                      <img
-                        src="assets/images/fur-1.jpg"
-                        alt="ads"
-                        class="img-fluid"
-                      />
-                      <h4>Driven Backpack K</h4>
-                      <p>200,00 $</p>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="prod-box">
-                      <img
-                        src="assets/images/fur-2.jpg"
-                        alt="ads"
-                        class="img-fluid"
-                      />
-                      <h4>Driven Backpack K</h4>
-                      <p>200,00 $</p>
-                    </a>
-                  </div>
                 </div>
               </div>
             </li>

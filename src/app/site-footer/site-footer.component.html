@@ -1,43 +1,12 @@
 <div class="footer-links">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h3>ABOUT MARKET</h3>
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let section of footer">
+        <h3>{{ section.title }}</h3>
         <ul>
-          <li><a href="#"> About </a></li>
-          <li><a href="#"> UsContactPrivacy </a></li>
-          <li><a href="#"> PolicySite </a></li>
-          <li><a href="#"> Map </a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h3>MAKE MONEY WITH US</h3>
-        <ul>
-          <li><a href="#"> Martketplace </a></li>
-          <li><a href="#"> Compensation </a></li>
-          <li><a href="#"> FirstMy </a></li>
-          <li><a href="#"> AccountReturn </a></li>
-          <li><a href="#"> PolicyAffiliate </a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h3>PAYMENT & SHIPPING</h3>
-        <ul>
-          <li><a href="#"> Terms of Use </a></li>
-          <li><a href="#"> Payment Methods </a></li>
-          <li><a href="#"> Shipping Methods </a></li>
-          <li><a href="#"> Locations We Ship To </a></li>
-          <li><a href="#"> Estimated Delivery Time </a></li>
-        </ul>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <h3>LET US HELP YOU</h3>
-        <ul>
-          <li><a href="#"> Join Free </a></li>
-          <li><a href="#"> Blog </a></li>
-          <li><a href="#"> Faqs </a></li>
-          <li><a href="#"> Store Location </a></li>
-          <li><a href="#"> Shop By Brands </a></li>
+          <li *ngFor="let ref of section.title">
+            <a href="#"> {{ ref }} </a>
+          </li>
         </ul>
       </div>
     </div>
