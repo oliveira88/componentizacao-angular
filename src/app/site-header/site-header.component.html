@@ -38,7 +38,6 @@
                       [id]="category.id"
                       [value]="category.value"
                       type="checkbox"
-                      (click)="myCatSelect($event)"
                     />
                     {{ category.value }}
                   </p>
@@ -50,7 +49,6 @@
                           [id]="subcategory.id"
                           [value]="subcategory.value"
                           type="checkbox"
-                          (click)="myCatSelect($event)"
                         />
                         {{ subcategory.value }}
                       </p>
@@ -65,7 +63,6 @@
                               [id]="subSubcategory.id"
                               [value]="subSubcategory.value"
                               type="checkbox"
-                              (click)="myCatSelect($event)"
                             />
                             {{ subSubcategory.value }}
                           </p>

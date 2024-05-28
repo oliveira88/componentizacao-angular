@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { SiteModalService } from './site-modal.service';
 
 export interface CarouselItem {
   id: number;
   imageUrl: string;
 }
 
-export interface ShipBox {
+export interface CheckBox {
   icon: string;
   title: string;
   description: string;
@@ -17,28 +18,13 @@ export interface ShipBox {
   styleUrls: ['./site-modal.component.scss'],
 })
 export class SiteModalComponent {
-  carouselItems: CarouselItem[] = [
-    { id: 1, imageUrl: 'assets/images/ring-1.jpg' },
-    { id: 2, imageUrl: 'assets/images/ring-2.jpg' },
-    { id: 3, imageUrl: 'assets/images/ring-3.jpg' },
-    { id: 4, imageUrl: 'assets/images/ring-4.jpg' },
-  ];
+  carouselItems: CarouselItem[] = [];
+  checkBox: CheckBox[] = [];
 
-  shipBoxes: ShipBox[] = [
-    {
-      icon: 'icofont-vehicle-delivery-van',
-      title: 'Free Shipping',
-      description: 'On all orders $199.00',
-    },
-    {
-      icon: 'icofont-money-bag',
-      title: '90 Day',
-      description: 'Money Come Black',
-    },
-    {
-      icon: 'icofont-safety',
-      title: 'Safe Shopping',
-      description: 'Guarantee 100%',
-    },
-  ];
+  constructor(private modalService: SiteModalService) {}
+
+  ngOnInit(): void {
+    this.carouselItems = this.modalService.getCarousel();
+    this.checkBox = this.modalService.getBox();
+  }
 }

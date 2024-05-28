@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SiteProductsSectionService } from './site-products-section.service';
 
 //Interface 'Products' with your specific properties
 interface Products {
@@ -18,42 +19,9 @@ interface Products {
 })
 export class SiteProductsSectionComponent {
   //Array that holds 'Products' properties
-  products: Products[] = [
-    {
-      image: 'assets/images/ring-3.jpg',
-      title: 'Philips Sonicare FlexCare Black',
-      oldPrice: '136.00$',
-      newPrice: '100.00$',
-      discount: '',
-      hasDiscount: false,
-      rating: 5,
-    },
-    {
-      image: 'assets/images/ring-4.jpg',
-      title: 'Philips Sonicare FlexCare Black',
-      oldPrice: '136.00$',
-      newPrice: '100.00$',
-      discount: '26%',
-      hasDiscount: true,
-      rating: 5,
-    },
-    {
-      image: 'assets/images/ring-1.jpg',
-      title: 'Philips Sonicare FlexCare Black',
-      oldPrice: '136.00$',
-      newPrice: '100.00$',
-      discount: '',
-      hasDiscount: false,
-      rating: 5,
-    },
-    {
-      image: 'assets/images/ring-2.jpg',
-      title: 'Philips Sonicare FlexCare Black',
-      oldPrice: '136.00$',
-      newPrice: '100.00$',
-      discount: '26%',
-      hasDiscount: true,
-      rating: 5,
-    },
-  ];
+  products: Products[];
+
+  constructor(public siteProducts: SiteProductsSectionService) {
+    this.products = this.siteProducts.getProducts();
+  }
 }

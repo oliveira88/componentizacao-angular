@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { SiteFooterService } from './site-footer.service';
 
-interface Footer {
+interface FooterItens {
   title: string;
-  ref?: string[];
+  ref: string[];
 }
 @Component({
   selector: 'app-site-footer',
@@ -10,34 +11,9 @@ interface Footer {
   styleUrls: ['./site-footer.component.scss'],
 })
 export class SiteFooterComponent {
-  footer: Footer[] = [
-    {
-      title: 'ABOUT MARKET',
-      ref: ['About', 'UsContactPrivacy', 'PolicySite', 'Map'],
-    },
-    {
-      title: 'MAKE MONEY WITH US',
-      ref: [
-        'Martketplace',
-        'Compensation',
-        'FirstMy',
-        'AccountReturn',
-        'PolicyAffiliate',
-      ],
-    },
-    {
-      title: 'PAYMENT & SHIPPING',
-      ref: [
-        'Terms of Use',
-        'Payment Methods',
-        'Shipping Methods',
-        'Locations We Ship To',
-        'Estimated Delivery Time',
-      ],
-    },
-    {
-      title: 'LET US HELP YOU',
-      ref: ['Join Free', 'Blog', 'Faqs', 'Store Location', 'Shop By Brands'],
-    },
-  ];
+  footer: FooterItens[];
+
+  constructor(private Sitefooter: SiteFooterService) {
+    this.footer = this.Sitefooter.getFooter();
+  }
 }
