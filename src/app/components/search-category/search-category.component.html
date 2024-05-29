@@ -1,0 +1,20 @@
+<li>
+  <p>
+    <span
+      *ngIf="hasSubcategories()"
+      class="plus">
+    </span>
+    <input
+      id="1"
+      [value]="category.name"
+      type="checkbox"
+      onclick="myCatSelect(this)"
+    />{{category.name}}
+  </p>
+  <ul *ngIf="hasSubcategories()">
+      <app-search-category
+          *ngFor="let subcategory of category.members"
+          [category]="subcategory">
+      </app-search-category>
+  </ul>
+</li>
