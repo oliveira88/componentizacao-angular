@@ -1,0 +1,119 @@
+<!-- DELETE MODAL  -->
+<div
+  class="modal fade"
+  id="delete-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="close-modal" data-dismiss="modal">
+          <i class="icofont-close-line"></i>
+        </div>
+      </div>
+      <div class="modal-body">
+        <h4>
+          Are you sure you would like to remove this item from the shopping
+          cart?
+        </h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-modal" data-dismiss="modal">
+          cancel
+        </button>
+        <button type="button" class="btn-modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART PRODUCT MODAL  -->
+<div
+  class="modal fade"
+  id="cart-product-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Confirmable Information</h2>
+      </div>
+      <div class="modal-body">
+        <h3>You have added <a href="#"> Philips Sonicare </a> to cart</h3>
+        <div class="img-box">
+          <img src="assets/images/ring-3.jpg" alt="product" class="img-fluid" />
+        </div>
+        <h5>There are <span> 10 </span> Items in your cart</h5>
+        <p>Cart Subtotal: <span> $1.00 </span></p>
+        <a href="#" class="view-cart"> View Cart </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn continue-btn" data-dismiss="modal">
+          <span> Continue Shopping </span> ( <span id="count-num"> 10 </span> )
+        </button>
+        <button type="button" class="btn checkout-btn">Go to Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT DETAILS  MODAL  -->
+<div
+  class="modal fade"
+  id="product-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-5">
+              <div class="proSlider">
+                <div id="owl-hash-URL2" class="owl-carousel owl-hash-slider">
+                  <div
+                    class="item"
+                    *ngFor="let item of carouselItems; let i = index"
+                    [attr.data-hash]="i"
+                  >
+                    <img [src]="item.imageUrl" class="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-7">
+              <div class="product-details"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let box of checkBox">
+              <div class="ship-box">
+                <img
+                  src="assets/images/bg-{{ box.icon }}"
+                  alt="bg"
+                  class="img-fluid"
+                />
+                <div class="secription">
+                  <div class="box">
+                    <div class="icon"><i class="{{ box.icon }}"></i></div>
+                    <div class="data">
+                      <h3>{{ box.title }}</h3>
+                      <h6>{{ box.description }}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

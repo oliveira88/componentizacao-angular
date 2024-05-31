@@ -1,0 +1,143 @@
+<header class="site-header">
+  <div class="middle-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="logo">
+            <a href="index.html">
+              <img
+                src="assets/images/logo_amazon.png"
+                alt="logo"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="col-9">
+          <form action="">
+            <div class="search-box">
+              <div class="filter-box">
+                <span id="result"> Shop by category </span>
+              </div>
+              <input type="text" placeholder="what are you looking for" />
+              <button class="btn-search" type="submit">
+                <i class="icofont-search"></i>
+              </button>
+            </div>
+
+            <div class="search-categ">
+              <div class="head">
+                <div class="expand">Expand All</div>
+                <div class="colapse">Collapse All</div>
+              </div>
+              <ul>
+                <li *ngFor="let category of categories">
+                  <p>
+                    <span class="plus"></span>
+                    <input
+                      [id]="category.id"
+                      [value]="category.value"
+                      type="checkbox"
+                    />
+                    {{ category.value }}
+                  </p>
+                  <ul *ngIf="category.subcategories">
+                    <li *ngFor="let subcategory of category.subcategories">
+                      <p>
+                        <span class="plus"></span>
+                        <input
+                          [id]="subcategory.id"
+                          [value]="subcategory.value"
+                          type="checkbox"
+                        />
+                        {{ subcategory.value }}
+                      </p>
+                      <ul *ngIf="subcategory.subcategories">
+                        <li
+                          *ngFor="
+                            let subSubcategory of subcategory.subcategories
+                          "
+                        >
+                          <p>
+                            <input
+                              [id]="subSubcategory.id"
+                              [value]="subSubcategory.value"
+                              type="checkbox"
+                            />
+                            {{ subSubcategory.value }}
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bootom-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="btn-menu">
+            <button class="btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            All Category
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <ul class="hot-links">
+            <li>
+              <span>hot</span>
+              <a href="#">Daniel Wellington watch - Hot trend 2016</a>
+            </li>
+            <li><span>hot</span> <a href="#">Haki Women Fashion 50% OFF</a></li>
+            <li><span>hot</span> <a href="#">Hot deal from Printer</a></li>
+            <li>
+              <span>hot</span> <a href="#">Samsung Smart phone 20% OFF</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-menu">
+        <div class="main-list">
+          <ul class="main-ul fixed-height">
+            <li
+              class="main-list-li list-cat"
+              *ngFor="let menuItem of menuItems"
+            >
+              <a class="main-a" href="#">
+                <span class="cat-icon">
+                  <i [class]="menuItem.icon"></i>
+                </span>
+                <span> {{ menuItem.name }} </span>
+                <span class="right-icon">
+                  <i class="icofont-thin-right"></i>
+                </span>
+              </a>
+              <div class="cat-popup-list">
+                <div class="menue-block">
+                  <ul>
+                    <li *ngFor="let submenuItem of menuItem.submenu">
+                      <a href="#" class="item-branch">
+                        {{ submenuItem.name }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,16 @@
+<div class="new-blocks">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let image of images"
+      >
+        <div class="new-block img-hover">
+          <a href="#">
+            <img [src]="image" alt="ad" class="img-fluid" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

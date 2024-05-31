@@ -1,0 +1,32 @@
+<div class="footer-links">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-lg-3" *ngFor="let section of footer">
+        <h3>{{ section.title }}</h3>
+        <ul>
+          <li *ngFor="let ref of section.title">
+            <a href="#"> {{ ref }} </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo_amazon.png" alt="img" class="img-fluid" />
+    </div>
+  </div>
+</div>
+
+<div class="copy-right">
+  <div class="container">
+    <h4>
+      Designed by <a href="#"> awamer. </a> Copyright
+      <i class="icofont-copyright"></i> 2006 - 2017. All Rights Reserved.
+      <img src="assets/images/icon-footer.png" alt="img" class="img-fluid" />
+    </h4>
+  </div>
+</div>
