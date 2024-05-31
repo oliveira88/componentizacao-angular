@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Products } from '../products.model';
 
 @Component({
   selector: 'app-products-cards',
@@ -7,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductsCardsComponent {
   // Input property that receives the values from the parent component
-  @Input() product: any;
+  @Input() product!: Products;
   public isLiked: boolean = false;
 
   toggleLike() {

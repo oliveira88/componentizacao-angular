@@ -1,16 +1,8 @@
 import { Component } from '@angular/core';
 import { SiteProductsSectionService } from './site-products-section.service';
+import { Products } from '../products.model';
 
 //Interface 'Products' with your specific properties
-interface Products {
-  title: string;
-  oldPrice: string;
-  newPrice: string;
-  discount: string;
-  hasDiscount: boolean;
-  image: string;
-  rating: number;
-}
 
 @Component({
   selector: 'app-site-products-section',
